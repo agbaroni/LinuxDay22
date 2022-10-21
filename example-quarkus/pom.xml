@@ -82,6 +82,7 @@
 		</network>
 		<ports>
 		  <port>18080:8080</port>
+		  <port>8443:8443</port>
 		</ports>
 	      </run>
 	    </image>
@@ -201,6 +202,10 @@
     </dependency>
     <dependency>
       <artifactId>quarkus-jdbc-postgresql</artifactId>
+      <groupId>${quarkus.groupId}</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>quarkus-keycloak-authorization</artifactId>
       <groupId>${quarkus.groupId}</groupId>
     </dependency>
     <dependency>

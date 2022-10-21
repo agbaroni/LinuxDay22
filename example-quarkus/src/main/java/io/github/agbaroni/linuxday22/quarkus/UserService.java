@@ -27,13 +27,15 @@ public class UserService implements Serializable {
 		return session.find(User.class, username)
 		    .onItem()
 		    .transform(usr -> {
-			    if (usr.getFirstName() == null) {
-				usr.setFirstName(usr.getFirstName());
+			    if (user.getFirstName() != null) {
+				usr.setFirstName(user.getFirstName());
 			    }
 
-			    if (usr.getLastName() == null) {
-				usr.setLastName(usr.getLastName());
+			    if (user.getLastName() != null) {
+				usr.setLastName(user.getLastName());
 			    }
+
+			    // session.merge(usr);
 
 			    return usr;
 			});

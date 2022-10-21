@@ -20,7 +20,7 @@ echo "Creazione del Realm"
 curl -s -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"enabled":true,"realm":"bank"}' http://test-keycloak:8080/auth/admin/realms
 
 echo "Creazione del client "
-curl -s -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"enabled":true,"clientId":"agency","redirectUris":["http://localhost:28080/*","http://test-service:8080/*"],"secret":"4931f7a6-2cf4-4bf4-a48b-495756557fcc"}' http://test-keycloak:8080/auth/admin/realms/bank/clients
+curl -s -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"enabled":true,"clientId":"agency","redirectUris":["http://localhost:28080/*","http://test-service:8080/*"],"secret":"4931f7a6-2cf4-4bf4-a48b-495756557fcc","directAccessGrantsEnabled":true}' http://test-keycloak:8080/auth/admin/realms/bank/clients
 
 echo "Salvataggio id del client"
 ID_CLIENT=$(curl -s -H "Authorization: Bearer $TOKEN" http://test-keycloak:8080/auth/admin/realms/bank/clients?clientId=agency | jq -r .[0].id)

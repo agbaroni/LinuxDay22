@@ -9,9 +9,20 @@ quarkus:
     database:
       generation: drop-and-create
     sql-load-script: 'import.sql'
+  log:
+    category:
+      "io.quarkus.oidc.runtime.OidcProvider":
+        level: DEBUG
+        min-level: DEBUG
+      "io.quarkus.oidc.runtime.OidcRecorder":
+        level: DEBUG
+        min-level: DEBUG
   oidc:
-    auth-server-url: 'http://test-keycloak:8080/auth/realms/bank'
+    auth-server-url: 'https://test-keycloak:8443/auth/realms/bank'
     client-id: agency
-    client-secret: '108f6914-0e39-4b8e-b983-56d5174301c7'
+    credentials:
+      secret: '4931f7a6-2cf4-4bf4-a48b-495756557fcc'
+    tls:
+      verification: none
   package:
     type: uber-jar

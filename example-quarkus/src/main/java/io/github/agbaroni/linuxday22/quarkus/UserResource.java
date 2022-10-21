@@ -1,6 +1,5 @@
 package io.github.agbaroni.linuxday22.quarkus;
 
-// import io.quarkus.security.identity.SecurityIdentity;
 import io.smallrye.mutiny.Uni;
 
 import java.io.Serializable;
@@ -23,9 +22,6 @@ import javax.ws.rs.core.MediaType;
 public class UserResource implements Serializable {
     private static final long serialVersionUID = 141372813312100L;
 
-    // @Inject
-    // SecurityIdentity securityIdentity;
-
     @Inject
     UserService userService;
 
@@ -43,7 +39,7 @@ public class UserResource implements Serializable {
     @Path("/{username}")
     @RolesAllowed({ "operator" })
     public Uni<User> update(@PathParam("username") String username, User user) {
-	var violations = validator.validate(user, User.class);
+	var violations = validator.validate(user);
 
 	if (violations.isEmpty()) {
 	    return userService.update(username, user);
