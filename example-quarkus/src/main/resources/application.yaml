@@ -1,0 +1,13 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    password: test
+    reactive:
+      url: 'vertx-reactive:postgresql://test-database:5432/test'
+    username: test
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+    sql-load-script: 'import.sql'
+  package:
+    type: uber-jar

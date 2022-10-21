@@ -1,0 +1,5 @@
+FROM postgres:alpine
+
+ENV POSTGRES_DB test
+ENV POSTGRES_PASSWORD test
+ENV POSTGRES_USER test
