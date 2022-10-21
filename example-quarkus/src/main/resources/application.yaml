@@ -9,5 +9,9 @@ quarkus:
     database:
       generation: drop-and-create
     sql-load-script: 'import.sql'
+  oidc:
+    auth-server-url: 'http://test-keycloak:8080/auth/realms/bank'
+    client-id: agency
+    client-secret: '108f6914-0e39-4b8e-b983-56d5174301c7'
   package:
     type: uber-jar

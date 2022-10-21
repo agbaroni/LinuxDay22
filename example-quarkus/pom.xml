@@ -113,6 +113,23 @@
 		</ports>
 	      </run>
 	    </image>
+	    <image>
+	      <build>
+		<contextDir>setup</contextDir>
+	      </build>
+	      <name>test-setup</name>
+	      <run>
+		<dependsOn>
+		  <container>test-keycloak-database</container>
+		  <container>test-keycloak</container>
+		  <container>test-database</container>
+		  <container>test-service</container>
+		</dependsOn>
+		<network>
+		  <name>test</name>
+		</network>
+	      </run>
+	    </image>
 	  </images>
 	</configuration>
 	<groupId>io.fabric8</groupId>
