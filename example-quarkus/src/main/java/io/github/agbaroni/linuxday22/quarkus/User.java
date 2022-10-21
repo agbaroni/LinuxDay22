@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.Pattern;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,16 +23,19 @@ public class User implements Serializable {
     @Column(name = "USERNAME")
     @Getter
     @Id
+    @Pattern(regexp = "[a-zA-Z]+")
     @Setter
     private String username;
 
     @Column(name = "FIRST_NAME")
     @Getter
+    @Pattern(regexp = "[a-zA-Z ]+")
     @Setter
     private String firstName;
 
     @Column(name = "LAST_NAME")
     @Getter
+    @Pattern(regexp = "[a-zA-Z ]+")
     @Setter
     private String lastName;
 

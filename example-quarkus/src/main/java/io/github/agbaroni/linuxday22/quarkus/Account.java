@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.DecimalMin;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -34,6 +35,7 @@ public class Account implements Serializable {
     private User user;
 
     @Column(name = "AMOUNT")
+    @DecimalMin("0.0")
     @Getter
     @Setter
     private Double amount;

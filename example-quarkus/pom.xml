@@ -174,10 +174,6 @@
       <artifactId>quarkus-config-yaml</artifactId>
       <groupId>${quarkus.groupId}</groupId>
     </dependency>
-    <!-- <dependency> -->
-    <!--   <artifactId>quarkus-hibernate-orm</artifactId> -->
-    <!--   <groupId>${quarkus.groupId}</groupId> -->
-    <!-- </dependency> -->
     <dependency>
       <artifactId>quarkus-hibernate-reactive</artifactId>
       <groupId>${quarkus.groupId}</groupId>
@@ -191,17 +187,13 @@
       <groupId>${quarkus.groupId}</groupId>
     </dependency>
     <dependency>
+      <artifactId>quarkus-oidc</artifactId>
+      <groupId>${quarkus.groupId}</groupId>
+    </dependency>
+    <dependency>
       <artifactId>quarkus-reactive-pg-client</artifactId>
       <groupId>${quarkus.groupId}</groupId>
     </dependency>
-    <!-- <dependency> -->
-    <!--   <artifactId>quarkus-resteasy</artifactId> -->
-    <!--   <groupId>${quarkus.groupId}</groupId> -->
-    <!-- </dependency> -->
-    <!-- <dependency> -->
-    <!--   <artifactId>quarkus-resteasy-jsonb</artifactId> -->
-    <!--   <groupId>${quarkus.groupId}</groupId> -->
-    <!-- </dependency> -->
     <dependency>
       <artifactId>quarkus-resteasy-reactive</artifactId>
       <groupId>${quarkus.groupId}</groupId>

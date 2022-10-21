@@ -4,6 +4,8 @@ import io.smallrye.mutiny.Uni;
 
 import java.io.Serializable;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.validation.Validator;
 import javax.ws.rs.Consumes;
@@ -28,12 +30,14 @@ public class AccountResource implements Serializable {
 
     @GET
     @Path("/{iban}")
+    @PermitAll
     public Uni<Account> find(@PathParam("iban") String iban) {
 	return accountService.find(iban);
     }
 
     @PUT
     @Path("/{iban}")
+    @RolesAllowed({ "operator" })
     public Uni<Account> update(@PathParam("iban") String iban, Account account) {
 	var violations = validator.validate(account, Account.class);
 
